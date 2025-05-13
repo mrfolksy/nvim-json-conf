@@ -1,0 +1,1 @@
+# nvim-json-conf

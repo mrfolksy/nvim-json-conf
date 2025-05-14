@@ -6,7 +6,7 @@ local M = {}
 
 -- Find the nearest ancestor dir containing .nvimrc.json
 function M.find_root()
-  return util.root_pattern(".nvimrc.json")(vim.fn.getcwd())
+  return util.root_pattern(".nvimconf.json")(vim.fn.getcwd())
 end
 
 -- Load and decode .nvimrc.json into a Lua table (or {} on failure)
@@ -16,7 +16,7 @@ function M.load()
     return {}
   end
 
-  local path = root .. "/.nvimrc.json"
+  local path = root .. "/.nvimconf.json"
   if uv.fs_stat(path) == nil then
     return {}
   end

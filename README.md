@@ -7,9 +7,6 @@ A Neovim plugin that loads a per-project `.nvimconf.json` into a Lua table that 
 ```lua
 return {
   "mrfolksy/nvim-json-conf",
-  config = function()
-    require("nvim-json-conf").setup()
-  end,
 }
 ```
 
@@ -64,4 +61,3 @@ return {
 }
 
 ```
-

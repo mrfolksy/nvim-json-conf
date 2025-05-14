@@ -4,12 +4,10 @@ local util = require("lspconfig.util")
 
 local M = {}
 
--- Find the nearest ancestor dir containing .nvimrc.json
 function M.find_root()
   return util.root_pattern(".nvimconf.json")(vim.fn.getcwd())
 end
 
--- Load and decode .nvimrc.json into a Lua table (or {} on failure)
 function M.load()
   local root = M.find_root()
   if not root then
